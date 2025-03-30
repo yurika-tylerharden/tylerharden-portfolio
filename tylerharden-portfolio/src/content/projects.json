@@ -1,0 +1,58 @@
+[
+    {
+      "title": "InfoDynamics",
+      "year": "2024",
+      "skills": ["React", "GraphQL", "Hasura", "UX/UI"],
+      "thumbnail": "/assets/infodynamics-thumbnail.jpg",
+      "additionalPhotos": [],
+      "description": "A SaaS portal for meter data analytics and billing functionality."
+    },
+    {
+      "title": "HazChat",
+      "year": "2023",
+      "skills": ["Swift", "SwiftUI", "SQLite", "AWS"],
+      "thumbnail": "/assets/hazchat-thumbnail.jpg",
+      "additionalPhotos": [],
+      "description": "An iOS enterprise application for workplace communication."
+    },
+    {
+      "title": "PolyPortal",
+      "year": "2023",
+      "skills": ["Unity", "AWS", "3D Modeling"],
+      "thumbnail": "/assets/polyportal-thumbnail.jpg",
+      "additionalPhotos": [],
+      "description": "A proof-of-concept app for viewing internal 3D models on AWS cloud infrastructure."
+    },
+    {
+      "title": "GeoAlarms Product",
+      "year": "2024",
+      "skills": ["Python", "Kafka", "Data Analytics"],
+      "thumbnail": "/assets/geoalarms-thumbnail.jpg",
+      "additionalPhotos": [],
+      "description": "A meter alarms product developed in collaboration with an Australian DNSP."
+    },
+    {
+      "title": "Meter Data Analytics Platform",
+      "year": "2022",
+      "skills": ["Python", "PySpark", "Databricks"],
+      "thumbnail": "/assets/meter-data-thumbnail.jpg",
+      "additionalPhotos": [],
+      "description": "A data analytics solution for meter data using Databricks and MLflow."
+    },
+    {
+      "title": "daste.website",
+      "year": "2025",
+      "skills": ["React", "Cloudflare"],
+      "thumbnail": "/assets/daste-thumbnail.jpg",
+      "additionalPhotos": [],
+      "description": "The official website for my band daste., hosted on Cloudflare infrastructure."
+    },
+    {
+      "title": "Rehearsal Studio App",
+      "year": "2025",
+      "skills": ["React", "Audio Processing", "Web Audio API"],
+      "thumbnail": "/assets/rehearsal-studio-thumbnail.jpg",
+      "additionalPhotos": [],
+      "description": "A React-based web application for musicians to upload stems, assign them to band members, and create custom practice mixes."
+    }
+  ]
