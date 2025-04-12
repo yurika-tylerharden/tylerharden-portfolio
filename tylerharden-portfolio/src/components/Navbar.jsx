@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 function Navbar({ onScrollToSection }) {
   const [darkMode, setDarkMode] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -11,26 +12,47 @@ function Navbar({ onScrollToSection }) {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);  // if the user scrolls down even 1px, set true
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll); // clean up
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-white dark:bg-darkBlue text-darkBlue dark:text-white shadow-md z-50">
-      <div className="flex items-center">
-        <span className="text-xl font-bold cursor-pointer" onClick={onScrollToSection.home}>
-          Tyler Harden
-        </span>
-      </div>
-      <div className="space-x-4">
-        <button onClick={onScrollToSection.home} className="hover:text-gray-400">Home</button>
-        <button onClick={onScrollToSection.about} className="hover:text-gray-400">About</button>
-        <button onClick={onScrollToSection.projects} className="hover:text-gray-400">Projects</button>
-        <button onClick={onScrollToSection.resume} className="hover:text-gray-400">Resume</button>
-        <button onClick={onScrollToSection.music} className="hover:text-gray-400">Music</button>
-        <button onClick={onScrollToSection.contact} className="hover:text-gray-400">Contact</button>
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-        >
-          {darkMode ? '☀️' : '🌙'}
-        </button>
+    <nav className={`bg-gray-100 py-4 px-6 sticky top-0 z-50 transition-shadow ${isScrolled ? 'shadow-md' : ''}`}>
+      <div className="container mx-auto flex justify-between items-center">
+        <h3 className="text-xl font-bold">tylerharden.io</h3>
+        <ul className="flex space-x-6 text-sm font-medium">
+          <li className="cursor-pointer hover:text-gray-600" onClick={onScrollToSection.home}>
+            Home
+          </li>
+          <li className="cursor-pointer hover:text-gray-600" onClick={onScrollToSection.about}>
+            About
+          </li>
+          <li className="cursor-pointer hover:text-gray-600" onClick={onScrollToSection.projects}>
+            Projects
+          </li>
+          <li className="cursor-pointer hover:text-gray-600" onClick={onScrollToSection.resume}>
+            Resume
+          </li>
+          <li className="cursor-pointer hover:text-gray-600" onClick={onScrollToSection.music}>
+            Music
+          </li>
+          <li className="cursor-pointer hover:text-gray-600" onClick={onScrollToSection.contact}>
+            Contact
+          </li>
+          {/* <li className="cursor-pointer hover:text-gray-600">
+              <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+            >
+              {darkMode ? '☀️' : '🌙'}
+            </button>
+          </li> */}
+        </ul>
       </div>
     </nav>
   );

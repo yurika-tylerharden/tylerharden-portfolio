@@ -16,11 +16,19 @@ function App() {
   const musicRef = useRef(null);
 
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+    const offset = 80; // Adjust this value to match your Navbar height
+    const elementPosition = ref.current.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   };
 
   return (
     <div>
+      {/* <div className="splash-screen"></div> */}
       <Navbar
         onScrollToSection={{
           home: () => scrollToSection(homeRef),
@@ -31,22 +39,23 @@ function App() {
           music: () => scrollToSection(musicRef),
         }}
       />
-      <div ref={homeRef}>
+
+      <div ref={homeRef} >
         <Home />
       </div>
-      <div ref={aboutRef}>
+      <div ref={aboutRef} className="py-2">
         <About />
       </div>
-      <div ref={projectsRef}>
+      <div ref={projectsRef} className="py-2">
         <Projects />
       </div>
-      <div ref={resumeRef}>
+      <div ref={resumeRef} className="py-2">
         <Resume />
       </div>
-      <div ref={musicRef}>
+      <div ref={musicRef} className="py-2">
         <Music />
       </div>
-      <div ref={contactRef}>
+      <div ref={contactRef} className="py-2">
         <Contact />
       </div>
     </div>

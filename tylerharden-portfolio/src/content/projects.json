@@ -3,7 +3,7 @@
       "title": "InfoDynamics",
       "year": "2024",
       "skills": ["React", "GraphQL", "Hasura", "UX/UI"],
-      "thumbnail": "/assets/infodynamics-thumbnail.jpg",
+      "thumbnail": "src/assets/project_infodynamics.jpeg",
       "additionalPhotos": [],
       "description": "A SaaS portal for meter data analytics and billing functionality."
     },
@@ -11,7 +11,7 @@
       "title": "HazChat",
       "year": "2023",
       "skills": ["Swift", "SwiftUI", "SQLite", "AWS"],
-      "thumbnail": "/assets/hazchat-thumbnail.jpg",
+      "thumbnail": "src/assets/project_hazchat.jpeg",
       "additionalPhotos": [],
       "description": "An iOS enterprise application for workplace communication."
     },
@@ -43,7 +43,7 @@
       "title": "daste.website",
       "year": "2025",
       "skills": ["React", "Cloudflare"],
-      "thumbnail": "/assets/daste-thumbnail.jpg",
+      "thumbnail": "src/assets/project_daste-website.png",
       "additionalPhotos": [],
       "description": "The official website for my band daste., hosted on Cloudflare infrastructure."
     },
