@@ -47,7 +47,7 @@ const About = () => {
           className="mb-8 md:mb-0 flex-shrink-0"
         >
           <img
-            src="/public/IMG_4146 _ white blue background.jpg" // fix the image path if needed
+            src="images/tyler_portrait.jpg" // fix the image path if needed
             alt="Tyler Harden"
             className="w-48 h-48 object-cover rounded-full mx-auto md:mx-0 shadow-lg"
           />

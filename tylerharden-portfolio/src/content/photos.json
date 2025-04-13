@@ -16,28 +16,28 @@
     {
         "section": "me",
         "alt": "Live concert crowd",
-        "path": "src/assets/me.jpg",
+        "path": "/images/me.jpg",
         "location": "Melbourne, Australia",
         "credit": "Photo by Alex Johnson"
     },
     {
       "section": "live",
       "alt": "Live concert crowd",
-      "path": "src/assets/live1.jpg",
+      "path": "/images/live1.jpg",
       "location": "Melbourne, Australia",
       "credit": "Photo by Alex Johnson"
     },
     {
         "section": "live",
         "alt": "Live concert crowd",
-        "path": "src/assets/live2.jpg",
+        "path": "/images/live2.jpg",
         "location": "Melbourne, Australia",
         "credit": "Photo by Alex Johnson"
       },
       {
         "section": "live",
         "alt": "Live concert crowd",
-        "path": "src/assets/live3.jpg",
+        "path": "/images/live3.jpg",
         "location": "Melbourne, Australia",
         "credit": "Photo by Alex Johnson"
       }
