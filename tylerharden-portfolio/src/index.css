@@ -63,3 +63,20 @@ a:hover {
     color: #f9fafb;
   }
 }
+
+/* Override typewriter default cursor */
+.Typewriter__cursor {
+  display: inline-block;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+/* Make the cursor blink like a terminal */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
