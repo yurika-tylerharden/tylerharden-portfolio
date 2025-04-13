@@ -8,6 +8,8 @@ import Resume from './pages/Resume';
 import Music from './pages/Music';
 import SplashScreen from './components/SplashScreen';
 import Section from './components/Section';
+import Auth from './pages/Auth'; // <- import Auth
+
 // import './App.css'
 
 function App() {
@@ -19,6 +21,17 @@ function App() {
   const resumeRef = useRef(null);
   const musicRef = useRef(null);
   
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleAuthSuccess = () => {
+    setIsAuthenticated(true);
+  };
+
+  if (!isAuthenticated) {
+    return <Auth onAuthSuccess={handleAuthSuccess} />;
+  }
+
+
   const scrollToFirstSection = () => {
     window.scrollTo({
       top: window.innerHeight,
