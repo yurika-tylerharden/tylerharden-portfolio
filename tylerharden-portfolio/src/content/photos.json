@@ -1,0 +1,44 @@
+[
+    {
+        "alt": "Band performing live",
+        "key": "band",
+        "location": "Brisbane, Australia",
+        "credit": "Photo by John Doe",
+        "section": "band"
+    },
+    {
+      "section": "vinyl",
+      "alt": "Vinyl record close-up",
+      "key": "vinyl",
+      "location": "Gold Coast, Australia",
+      "credit": "Photo by Jane Smith"
+    },
+    {
+        "section": "me",
+        "alt": "Live concert crowd",
+        "key": "me",
+        "location": "Melbourne, Australia",
+        "credit": "Photo by Alex Johnson"
+    },
+    {
+      "section": "live",
+      "alt": "Live concert crowd",
+      "key": "live1",
+      "location": "Melbourne, Australia",
+      "credit": "Photo by Alex Johnson"
+    },
+    {
+        "section": "live",
+        "alt": "Live concert crowd",
+        "key": "live2",
+        "location": "Melbourne, Australia",
+        "credit": "Photo by Alex Johnson"
+      },
+      {
+        "section": "live",
+        "alt": "Live concert crowd",
+        "key": "live3",
+        "location": "Melbourne, Australia",
+        "credit": "Photo by Alex Johnson"
+      }
+  ]
