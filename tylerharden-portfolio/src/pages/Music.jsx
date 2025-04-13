@@ -3,89 +3,68 @@ import photosData from '../content/photos.json';
 import PhotoCarousel from '../components/PhotoCarousel';
 import Photo from '../components/Photo';
 
-// Import images manually
-import mePhoto from '../assets/me.jpg';
-import live1Photo from '../assets/live1.jpg';
-import live2Photo from '../assets/live2.jpg';
-import live3Photo from '../assets/live3.jpg';
-
-const liveImageMap = {
-  live1: live1Photo,
-  live2: live2Photo,
-  live3: live3Photo,
-};
-
-const meImageMap = {
-  me: mePhoto
-}
-
 function Music() {
   const [musicPhotos, setMusicPhotos] = useState([]);
   const [mePhotos, setMePhotos] = useState([]);
 
   useEffect(() => {
     const livePhotosFiltered = photosData.filter(photo => photo.section === 'live');
-    setMusicPhotos(livePhotosFiltered)
+    setMusicPhotos(livePhotosFiltered);
     const mePhotoFiltered = photosData.filter(photo => photo.section === 'me');
     setMePhotos(mePhotoFiltered);
-
   }, []);
+
   return (
     <section className="">
-      <div className="max-w-4xl mx-auto text-center">
-        <Photo
-          photo={mePhotos[0]} 
-          imageMap={meImageMap}
-          lockAspectRatio={true}
-          aspectRatio="16/9"
-        />
-        <PhotoCarousel 
-          photos={musicPhotos} 
-          imageMap={liveImageMap} 
-          changeInterval={5000}      
-          lockAspectRatio={true}         
-          aspectRatio="16/9"             
-        />
+      <div className="mx-auto text-center space-y-16">
 
-        {/* Spotify Embed */}
-        <div className="mb-12">
-          <iframe 
-            src="https://open.spotify.com/embed/artist/5uXWOfu1kA8mQ9bUp5GgxT?utm_source=generator" 
-            width="100%" 
-            height="152" 
-            frameBorder="0" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"
-            className="rounded-xl shadow-md"
-          ></iframe>
-        </div>
-
-        {/* YouTube Embed */}
-        <div className="mb-12">
-          <div className="aspect-w-16 aspect-h-9">
-            <iframe 
-              className="rounded-xl shadow-md" 
-              src="https://www.youtube.com/embed/tS8d4XtT5oM" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            ></iframe>
+        {/* Me Photo + About Text */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="w-full md:w-1/2 flex justify-center">
+            <Photo
+              photo={mePhotos[0]}
+              lockAspectRatio={false}
+              aspectRatio=""
+              className="rounded-2xl shadow-md object-cover w-full h-auto max-w-[400px]"
+            />
+          </div>
+          <div className="w-full md:w-1/2 text-left flex flex-col justify-center">
+            <p className="text-lg leading-relaxed">
+              I create music under my solo name as well as with my band <strong>daste.</strong>. 
+              Our music blends organic and electronic elements to craft atmospheric, thoughtful soundscapes. 
+              We've toured internationally, released multiple albums, and continue to evolve our sound for audiences around the world.
+            </p>
           </div>
         </div>
 
-        {/* Secondary Photos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          <img 
-            src="/assets/vinyl.jpeg" 
-            alt="Vinyl record" 
-            className="rounded-2xl shadow-md object-cover"
-          />
-          <img 
-            src="/assets/live.jpg" 
-            alt="Live show" 
-            className="rounded-2xl shadow-md object-cover"
-          />
+        {/* YouTube Video + Live Carousel */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          {/* YouTube Video */}
+          <div className="w-full md:w-6/9">
+            <div className="relative w-full aspect-[16/9]">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-md"
+                src="https://www.youtube.com/embed/tS8d4XtT5oM"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Live Photo Carousel */}
+          <div className="w-full md:w-3/8 flex">
+            <div className="w-full flex justify-center items-center">
+              <div className="w-full h-full aspect-square">
+              <PhotoCarousel
+                photos={musicPhotos}
+                changeInterval={5000}
+              />
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   );

@@ -10,8 +10,8 @@ function Resume() {
         {resumeData.experience.map((item, index) => (
           <li key={index} className="border-b pb-4">
             <h3 className="text-lg font-bold">{item.title}</h3>
-            <p className="text-sm text-gray-600">{item.date}</p>
-            <p>{item.description}</p>
+            <p className="text-xs text-gray-600">{item.stringDate}</p>
+            <p className="text-sm">{item.description}</p>
           </li>
         ))}
       </ul>

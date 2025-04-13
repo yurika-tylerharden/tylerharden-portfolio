@@ -52,7 +52,7 @@ function App() {
   // }, [splashDone]);
 
   return (
-    <div>
+    <div className="App bg-gray-100 dark:bg-gray-900">
       {/* {!splashDone && (
         <SplashScreen onFinishSplashScreen={() => setSplashDone(true)} />
       )} */}
@@ -69,28 +69,30 @@ function App() {
               music: () => scrollToSection(musicRef),
             }}
           />
-          <div ref={aboutRef} className="">
-            <Home scrollToAbout={() => scrollToSection(aboutRef)} />
+          <div className="py-2"> 
+            <div ref={aboutRef} className="">
+              <Home scrollToAbout={() => scrollToSection(aboutRef)} />
+            </div>
+            <Section  name="About" reference={aboutRef} fillWhite={true}>
+              <About />
+            </Section>  
+
+            <Section  name="Projects" reference={projectsRef} fillWhite={true}>
+              <Projects />
+            </Section>  
+
+            <Section  name="Resume" reference={resumeRef} fillWhite={true}>
+              <Resume />
+            </Section>  
+
+            <Section  name="Music" reference={musicRef} fillWhite={true}>
+              <Music />
+            </Section>  
+
+            <Section  name="Contact" reference={contactRef} fillWhite={true}>
+              <Contact />
+            </Section>  
           </div>
-          <Section  name="About" reference={aboutRef}>
-            <About />
-          </Section>  
-
-          <Section  name="Projects" reference={projectsRef}>
-            <Projects />
-          </Section>  
-
-          <Section  name="Resume" reference={resumeRef}>
-            <Resume />
-          </Section>  
-
-          <Section  name="Music" reference={musicRef}>
-            <Music />
-          </Section>  
-
-          <Section  name="Contact" reference={contactRef}>
-            <Contact />
-          </Section>  
         </>
       {/* )} */}
     </div>

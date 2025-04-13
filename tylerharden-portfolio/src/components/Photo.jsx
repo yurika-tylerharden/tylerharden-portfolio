@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-function Photo({ photo, imageMap, lockAspectRatio = false, aspectRatio = '16/9' }) {
+function Photo({ photo, lockAspectRatio = false, aspectRatio = '16/9', className="" }) {
 if (!photo) return null;
 
   return (
-    <div className={`relative w-full mb-12 ${lockAspectRatio ? `aspect-[${aspectRatio}]` : ''}`}>
+    <div className={`relative w-full  ${lockAspectRatio ? `aspect-[${aspectRatio}]` : ''}`}>
       <img 
-        src={imageMap[photo.key]} 
+        src={photo.path} 
         alt={photo.alt} 
         className={`w-full ${lockAspectRatio ? 'h-full object-cover' : 'object-cover max-h-[600px]'} rounded-2xl shadow-md transition-all duration-700 ease-in-out`}
       />
