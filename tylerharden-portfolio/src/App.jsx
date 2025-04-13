@@ -7,7 +7,8 @@ import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import Music from './pages/Music';
 import SplashScreen from './components/SplashScreen';
-import Timeline from './components/Timeline';
+import Section from './components/Section';
+// import './App.css'
 
 function App() {
   const [splashDone, setSplashDone] = useState(false); // <- has the splash been exited yet?
@@ -58,6 +59,7 @@ function App() {
 
       {/* {splashDone && ( */}
         <>
+  
           <Navbar
             onScrollToSection={{
               about: () => scrollToSection(aboutRef),
@@ -70,22 +72,25 @@ function App() {
           <div ref={aboutRef} className="">
             <Home scrollToAbout={() => scrollToSection(aboutRef)} />
           </div>
-          <div ref={aboutRef} className="pt-2">
+          <Section  name="About" reference={aboutRef}>
             <About />
-          </div>
-          <div ref={projectsRef} className="py-2">
+          </Section>  
+
+          <Section  name="Projects" reference={projectsRef}>
             <Projects />
-          </div>
-          <div ref={resumeRef} className="py-2">
+          </Section>  
+
+          <Section  name="Resume" reference={resumeRef}>
             <Resume />
-            <Timeline />
-          </div>
-          <div ref={musicRef} className="py-2">
+          </Section>  
+
+          <Section  name="Music" reference={musicRef}>
             <Music />
-          </div>
-          <div ref={contactRef} className="py-2">
+          </Section>  
+
+          <Section  name="Contact" reference={contactRef}>
             <Contact />
-          </div>
+          </Section>  
         </>
       {/* )} */}
     </div>

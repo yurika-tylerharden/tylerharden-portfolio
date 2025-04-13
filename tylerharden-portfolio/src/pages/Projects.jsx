@@ -6,6 +6,7 @@ import projectsData from '../content/projects.json';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { AnimatePresence } from 'framer-motion';
+import SectionTitle from '../components/SectionTitle';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -52,8 +53,7 @@ const Projects = () => {
 
   return (
     <div className="">
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Projects</h1>
+      <div className=" ">
         <Slider {...settings}>
           {projectsData.map((project, index) => (
             <div key={index} className="p-2">

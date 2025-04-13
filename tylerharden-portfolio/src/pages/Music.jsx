@@ -31,10 +31,8 @@ function Music() {
 
   }, []);
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-16 px-6">
+    <section className="">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 tracking-tight">Creative — Music</h2>
-
         <Photo
           photo={mePhotos[0]} 
           imageMap={meImageMap}

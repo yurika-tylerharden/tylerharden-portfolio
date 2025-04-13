@@ -1,9 +1,9 @@
 import resumeData from '../content/resume.json';
+import Timeline from '../components/Timeline';
 
 function Resume() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Resume</h1>
+    <div className="">
       <p className="mb-6">{resumeData.bio}</p>
       <h2 className="text-xl font-semibold mb-4">Experience</h2>
       <ul className="space-y-4">
@@ -24,7 +24,10 @@ function Resume() {
           here
         </a>.
       </p>
+          <Timeline />
+
     </div>
+    
   );
 }
 
